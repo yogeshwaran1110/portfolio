@@ -113,7 +113,7 @@
 
 /* desktop improvement */
 @media (min-width: 768px) {
-    .container {
+    .reveal.container{
         max-width: 300px;
     }
 
@@ -123,7 +123,7 @@
 }
 @media (max-width: 599px) {
 
-    .container {
+    .reveal.container{
         max-width: 220px !important;
     }
     .card {
