@@ -1,0 +1,151 @@
+.about-container {
+  text-align: center;
+  background: #FFF8E7;
+}
+
+.about-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-top: 15px;
+  color: #87CEFA;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate(var(--x, 0), var(--y, 0));
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.reveal.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+
+  --x: 0;
+  --y: 100px;
+}
+
+.reveal.active.about-content {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.about-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10%;
+  box-shadow: 1.5px 1.5px 5px rgb(221, 224, 223);
+}
+
+.about-text {
+  width: 50%;
+  border-radius: 12px;
+  border: 1px solid #878484;
+  box-shadow: 1.5px 1.5px 3px rgb(0, 0, 1);
+  padding: 20px;
+  background-color: white;
+}
+
+.about-container p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Phone */
+@media (max-width: 599px) {
+  .about-content {
+    flex-direction: column !important;
+    padding: 20px;
+    gap: 25px;
+  }
+
+  .about-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-text {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .about-container h1 {
+    font-size: 2rem;
+  }
+
+  .about-container p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 600px) and (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+    padding: 30px;
+    gap: 35px;
+  }
+
+  .about-image {
+    width: 240px;
+    height: 240px;
+  }
+
+  .about-text {
+    width: 90%;
+  }
+
+  .about-container p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Laptop */
+@media (min-width: 901px) and (max-width: 1023px) {
+  .about-content {
+    flex-direction: row;
+    padding: 30px;
+    gap: 35px;
+  }
+
+  .about-image {
+    width: 240px;
+    height: 240px;
+  }
+
+  .about-text {
+    width: 90%;
+  }
+
+  .about-container p {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* Extra Large */
+@media (min-width: 1440px) {
+  .about-content {
+    gap: 60px;
+    padding: 60px;
+  }
+
+  .about-image {
+    width: 340px;
+    height: 340px;
+  }
+
+  .about-text {
+    width: 45%;
+    padding: 30px;
+  }
+
+  .about-container p {
+    font-size: 1.6rem;
+  }
+}

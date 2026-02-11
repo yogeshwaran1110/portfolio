@@ -1,0 +1,233 @@
+.contact {
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.contact h1 {
+    margin: 0;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-top: 15px;
+    color: #87CEFA;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1200px;
+    gap: 40px;
+}
+
+/* Left side */
+
+.information {
+    background: #121212;
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 0 20px rgba(255, 106, 45, 0.2);
+}
+
+/* Heading */
+.information h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Contact rows */
+.information a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    background: #1e1e1e;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.information a:hover {
+    background: #ff6a2d;
+    color: #fff;
+    transform: translateX(6px);
+}
+
+/* Icons */
+.information i {
+    font-size: 20px;
+    min-width: 24px;
+}
+
+/* Text */
+.information span {
+    font-size: 1rem;
+    word-break: break-word;
+}
+
+/* Right side */
+
+.send-me-message {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background: #121212;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 106, 45, 0.2);
+}
+
+.send-me-message table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    /* space between rows */
+
+}
+
+.send-me-message td {
+    color: white;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.send-me-message td:first-child {
+    width: 30%;
+    padding-top: 8px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.send-me-message input,
+.send-me-message textarea {
+    width: 90%;
+    padding: 10px 10px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #111;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+.send-me-message input:focus,
+.send-me-message textarea:focus {
+    border-color: #ff6a2d;
+    box-shadow: 0 0 5px rgba(255, 106, 45, 0.6);
+}
+
+.send-me-message textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.send-me-message button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    background: #ff6a2d;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.send-me-message button:hover {
+    background: #ff7f4d;
+    box-shadow: 0 8px 20px rgba(255, 106, 45, 0.5);
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .contact {
+    padding: 30px 15px;
+  }
+
+  .contact h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-left: 30px;
+  }
+
+  .information,
+  .send-me-message {
+    max-width: 80%;
+    padding: 20px;
+  }
+
+  .send-me-message td {
+    display: block;
+    width: 100%;
+  }
+
+  .send-me-message td:first-child {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+
+  .send-me-message input,
+  .send-me-message textarea {
+    width: 90%;
+  }
+
+  .send-me-message button {
+    width: 50%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .information,
+  .send-me-message {
+    max-width: 100%;
+  }
+
+  .send-me-message input,
+  .send-me-message textarea {
+    width: 90%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .contact-container {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    gap: 30px;
+    margin-left: 40px;
+  }
+
+  .information,
+  .send-me-message {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 1201px) {
+  .contact-container {
+    max-width: 1300px;
+    gap: 50px;
+  }
+
+  
+}
+

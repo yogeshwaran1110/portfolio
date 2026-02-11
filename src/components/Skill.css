@@ -1,0 +1,137 @@
+/* section */
+.skill {
+    color: #fff;
+}
+
+/* title */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* viewport */
+
+.reveal {
+  opacity: 0;
+  transform: translate(var(--x, 0), var(--y, 0));
+  transition: transform 1s linear, opacity 1s linear;
+}
+.reveal.container {
+    width: 100%;
+    max-width: 300px; /* mobile safe */
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+
+    --x: 200px;
+    --y: 0;
+}
+.reveal.active.container{
+    opacity: 1;
+    --x: 0;
+    --y: 0;
+}
+
+/* slider track */
+.skill-slider {
+    display: flex;
+    width: 100%;
+}
+
+/* enable / disable animation */
+.skill-slider.transition {
+    transition: transform 0.8s ease-in-out;
+}
+
+/* card */
+.card {
+    min-width: 100%;
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* image */
+.skill-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-image:hover {
+    transform: scale(1.1);
+}
+
+/* text */
+.skill-text strong {
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.skill-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* glow colors */
+.skill-image.html {
+    filter: drop-shadow(0 0 25px #e34c26);
+}
+
+.skill-image.css {
+    filter: drop-shadow(0 0 25px #2965f1);
+}
+
+.skill-image.javascript {
+    filter: drop-shadow(0 0 25px #f7df1e);
+}
+
+.skill-image.react {
+    filter: drop-shadow(0 0 25px #61dafb);
+}
+
+.skill-image.python {
+    filter: drop-shadow(0 0 25px #3776ab);
+}
+
+.skill-image:hover {
+    filter: drop-shadow(0 0 40px currentColor);
+}
+
+/* desktop improvement */
+@media (min-width: 768px) {
+    .container {
+        max-width: 300px;
+    }
+
+    .card {
+        height: 300px;
+    }
+}
+@media (max-width: 599px) {
+
+    .container {
+        max-width: 220px !important;
+    }
+    .card {
+        height: 250px;
+    }
+    .skill-image{
+        margin-bottom: 0;
+    }
+}
+
+

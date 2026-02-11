@@ -1,0 +1,91 @@
+.education {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10%;
+}
+.education h1 {
+  text-align: center;
+  margin-top: 6px;
+}
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #87CEFA;
+  margin-bottom: 40px;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 3px;
+  height: 87%;
+  background-color: #1abc9c;
+}
+
+/* Timeline item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Dot */
+.dot {
+  width: 14px;
+  height: 14px;
+  background-color: #1abc9c;
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  top: 6px;
+}
+
+/* Content card */
+.reveal{
+  opacity: 0;
+  transform: translate(var(--x, 0), var(--y, 0));
+  transition: transform 1s linear, opacity 1s linear;
+}
+.reveal.content {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  padding: 20px;
+  margin-left: 30px;
+  border-radius: 8px;
+  box-shadow: 1px 4px 10px rgba(0,0,0,0.08);
+
+  --x: -200px;
+  --y: 0;
+}
+.reveal.content.active{
+  opacity: 1;
+ --x: 0;
+  --y: 0; 
+}
+
+.year {
+  font-size: 0.9rem;
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+.content h3 {
+  margin: 8px 0;
+  font-size: 1.2rem;
+}
+
+.content p {
+  color: #555;
+  margin: 0;
+}

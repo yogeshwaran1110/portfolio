@@ -1,0 +1,46 @@
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.social-media a {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.social-media a:hover {
+  background: #ff6a2d;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 106, 45, 0.5);
+}
+
+.social-media a i { 
+  pointer-events: none;
+}
+
+.social-media a:nth-child(1):hover { background: #333; }      /* GitHub */
+.social-media a:nth-child(2):hover { background: radial-gradient(
+    circle at 30% 30%,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+ }   /* Instagram */
+.social-media a:nth-child(3):hover { background: #1877f2; }   /* Facebook */
+.social-media a:nth-child(4):hover { background: #1e1e1e; }   /* Twitter */
+.social-media a:nth-child(5):hover { background: #0a66c2; }   /* LinkedIn */
