@@ -20,7 +20,6 @@ export function Skill() {
         { image: python, name: 'Python', description: 'Basic Python knowledge for scripting and backend understanding.' }
     ];
 
-    // clone first slide at end
     const extendedSkills = [...skills, skills[0]];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,17 +36,20 @@ export function Skill() {
         return () => clearInterval(interval);
     }, [isPaused]);
 
-    // handle seamless reset
-    useEffect(() => {
+    const handleTransitionEnd = () => {
         if (currentIndex === skills.length) {
-            setTimeout(() => {
-                setEnableTransition(false);
-                setCurrentIndex(0);
-            }, 800); // match CSS transition time
-        } else {
-            setEnableTransition(true);
+            setEnableTransition(false);
+            setCurrentIndex(0);
         }
-    }, [currentIndex, skills.length]);
+    };
+
+    useEffect(() => {
+        if (!enableTransition) {
+            requestAnimationFrame(() => {
+                setEnableTransition(true);
+            });
+        }
+    }, [enableTransition]);
 
     return (
         <section id='skills' className="skill">
@@ -55,6 +57,7 @@ export function Skill() {
 
             <div className="reveal container">
                 <div
+                    onTransitionEnd={handleTransitionEnd}
                     className={`skill-slider ${enableTransition ? 'transition' : ''}`}
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
@@ -68,9 +71,9 @@ export function Skill() {
                                 alt={skill.name}
                             />
                             <div className="skill-text">
-                                    <strong>{skill.name}</strong>
-                                    <p>{skill.description}</p>
-                                </div>
+                                <strong>{skill.name}</strong>
+                                <p>{skill.description}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
