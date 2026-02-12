@@ -25,7 +25,7 @@ export function Projects() {
       liveLink: 'https://yogeshwaran1110.github.io/chatbot-project/',
       repoLink: 'https://github.com/yogeshwaran1110/chatbot-project',
     },
-    
+
   ];
 
   return (
@@ -54,7 +54,14 @@ export function Projects() {
 
             <h2 className="project-name">{project.name}</h2>
             <p className="project-description">{project.description}</p>
-            <p href={project.liveLink} className="live-link">Live-link</p>
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noreferrer"
+              className="live-link"
+            >
+              Live-link
+            </a>
           </div>
         ))}
       </div>
