@@ -107,13 +107,26 @@
     filter: drop-shadow(0 0 25px #3776ab);
 }
 
+.skill-image.django {
+    filter: drop-shadow(0 0 25px #092e20);
+}
+
+.skill-image.sql {
+    filter: drop-shadow(0 0 25px #4479a1);
+}
+
+.skill-image.mongodb {
+    filter: drop-shadow(0 0 25px #47a248);
+}
+
+
 .skill-image:hover {
     filter: drop-shadow(0 0 40px currentColor);
 }
 
 /* desktop improvement */
 @media (min-width: 768px) {
-    .reveal.container{
+    .container {
         max-width: 300px;
     }
 
@@ -123,7 +136,7 @@
 }
 @media (max-width: 599px) {
 
-    .reveal.container{
+    .container {
         max-width: 220px !important;
     }
     .card {

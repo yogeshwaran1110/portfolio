@@ -14,7 +14,7 @@ import './Home.css';
 
 export function Home() {
   const name = "Yogesh Waran";
-  const role = ["Front-End Developer", "React Developer"];
+  const role = ["Front-End Developer", "React.js Developer", "Full-Stack Developer"];
   // const description = "I build modern, responsive web interfaces with a focus on clean design and perfect user experience.Specialized in React and modern JavaScript to create interactive user experiences.";
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);

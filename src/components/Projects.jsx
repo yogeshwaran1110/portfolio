@@ -2,18 +2,29 @@ import './Projects.css';
 import { useScrollReveal } from './units/useScrollReveal';
 import ecommerce from '../assets/image/project/ecommerce.jpg';
 import chatbot from '../assets/image/project/chatbot.jpg';
+import doctorAppointment from '../assets/image/project/DoctorAppointment.jpg';
+import publicComplaint from '../assets/image/project/publicComplaint.jpg';
 import link from '../assets/image/project/link.png';
 import github from '../assets/image/project/github.png';
 
 export function Projects() {
   useScrollReveal();
 
+
   const projects = [
+    {
+      image: doctorAppointment,
+      name: 'Doctor Appointment',
+      description:
+        'A web application for booking doctor appointments and managing patient records, with MySQL database integration and appointment editing and deletion.',
+      liveLink: 'https://doctor-appointment-4qkb.onrender.com',
+      repoLink: 'https://github.com/yogeshwaran1110/Doctor-Appointment-',
+    },
     {
       image: ecommerce,
       name: 'E-Commerce Website',
       description:
-        'A complete Amazon-inspired eCommerce website built using HTML, CSS, and JavaScript.',
+        'A responsive Amazon-inspired eCommerce website built using HTML, CSS, and JavaScript with product listings and interactive features.',
       liveLink: 'https://yogeshwaran1110.github.io/ecommerce-project/',
       repoLink: 'https://github.com/yogeshwaran1110/ecommerce-project',
     },
@@ -21,12 +32,20 @@ export function Projects() {
       image: chatbot,
       name: 'Chatbot Application',
       description:
-        'An interactive chatbot application developed using HTML, CSS, JavaScript and React.',
+        'An interactive chatbot application developed using HTML, CSS, JavaScript, and React.js to provide a dynamic user interface.',
       liveLink: 'https://yogeshwaran1110.github.io/chatbot-project/',
       repoLink: 'https://github.com/yogeshwaran1110/chatbot-project',
     },
-
+    {
+      image: publicComplaint,
+      name: 'Public Complaint Management System',
+      description:
+        'A centralized platform concept for submitting and tracking public complaints, with separate panels for citizens, department officers, and administrators.',
+      liveLink: '',
+      repoLink: '',
+    },
   ];
+
 
   return (
     <section id="projects" className="projects">
@@ -54,14 +73,7 @@ export function Projects() {
 
             <h2 className="project-name">{project.name}</h2>
             <p className="project-description">{project.description}</p>
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noreferrer"
-              className="live-link"
-            >
-              Live-link
-            </a>
+            <p href={project.liveLink} className="live-link">Live-link</p>
           </div>
         ))}
       </div>

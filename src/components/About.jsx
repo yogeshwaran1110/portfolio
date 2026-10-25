@@ -4,7 +4,7 @@ import aboutImage from '../assets/image/about.JPG';
 
 export function About() {
 
-    const aboutcontent = "I’m a passionate Frontend and Web Developer focused on building modern, responsive websites. I work with HTML, CSS, JavaScript, and React to create clean and interactive user experiences. Always learning and improving, aiming to grow into a full-stack developer.";
+    const aboutcontent = "I'm a passionate Full-Stack Developer who enjoys turning ideas into modern, responsive, and interactive web applications. With a strong foundation in frontend technologies and backend development, I focus on creating seamless user experiences and reliable web solutions. I'm always eager to learn new technologies, solve problems, and build applications that make a difference.";
 
     useScrollReveal();
 

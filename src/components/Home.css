@@ -95,7 +95,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 30%;
+  object-position: 43%;
 }
 
 
@@ -314,8 +314,12 @@
   }
 
   /* SKILL */
-  .education-skill .skill .reveal.container {
+  .skill-container {
     justify-content: center;
+  }
+
+  .skill-content {
+    width: 100%;
   }
 
   .skill-image {
@@ -332,7 +336,14 @@
     gap: 4rem;
   }
 
+  .content {
+    width: 100%;
+    max-width: 480px;
+  }
 
+  .skill-content {
+    width: 360px;
+  }
 }
 
 /* Laptop */
@@ -344,6 +355,14 @@
     gap: 4rem;
   }
 
+  .content {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .skill-content {
+    width: 360px;
+  }
 }
 
 /* Extra Large */
@@ -354,6 +373,13 @@
     gap: 6rem;
   }
 
+  .content {
+    width: 500px;
+  }
+
+  .skill-content {
+    width: 380px;
+  }
 
   .section-title {
     font-size: 3rem;

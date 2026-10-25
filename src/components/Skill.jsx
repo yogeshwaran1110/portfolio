@@ -7,19 +7,58 @@ import css from '../assets/image/skills/css.png';
 import javascript from '../assets/image/skills/javascript.png';
 import react from '../assets/image/skills/react.png';
 import python from '../assets/image/skills/python.png';
+import django from '../assets/image/skills/django.png';
+import sql from '../assets/image/skills/sql.png';
+import mongodb from '../assets/image/skills/mongodb.png';
 
 export function Skill() {
 
     useScrollReveal();
 
     const skills = [
-        { image: html, name: 'HTML', description: 'Experienced in building clean, structured, and SEO-friendly web pages using HTML5.' },
-        { image: css, name: 'CSS', description: 'Skilled in creating responsive layouts, animations, and modern UI designs with CSS3.' },
-        { image: javascript, name: 'JavaScript', description: 'Strong understanding of JavaScript for building interactive and dynamic web features.' },
-        { image: react, name: 'React', description: 'Skilled in developing modern, component-based web applications with React JS.' },
-        { image: python, name: 'Python', description: 'Basic Python knowledge for scripting and backend understanding.' }
-    ];
+    {
+        image: html,
+        name: 'HTML',
+        description: 'Experienced in building clean, structured, and SEO-friendly web pages using HTML5.'
+    },
+    {
+        image: css,
+        name: 'CSS',
+        description: 'Skilled in creating responsive layouts, animations, and modern UI designs with CSS3.'
+    },
+    {
+        image: javascript,
+        name: 'JavaScript',
+        description: 'Strong understanding of JavaScript for building interactive and dynamic web features.'
+    },
+    {
+        image: react,
+        name: 'React.js',
+        description: 'Skilled in developing modern, component-based web applications with React.js.'
+    },
+    {
+        image: python,
+        name: 'Python',
+        description: 'Knowledge of Python programming, problem-solving, and backend development fundamentals.'
+    },
+    {
+        image: django,
+        name: 'Django',
+        description: 'Knowledge of Django for developing backend applications, handling requests, and connecting databases.'
+    },
+    {
+        image: sql,
+        name: 'SQL / MySQL',
+        description: 'Experience working with relational databases, SQL queries, joins, and CRUD operations.'
+    },
+    {
+        image: mongodb,
+        name: 'MongoDB',
+        description: 'Knowledge of NoSQL databases, document-based data storage, and CRUD operations.'
+    }
+];
 
+    // clone first slide at end
     const extendedSkills = [...skills, skills[0]];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,20 +75,17 @@ export function Skill() {
         return () => clearInterval(interval);
     }, [isPaused]);
 
-    const handleTransitionEnd = () => {
-        if (currentIndex === skills.length) {
-            setEnableTransition(false);
-            setCurrentIndex(0);
-        }
-    };
-
+    // handle seamless reset
     useEffect(() => {
-        if (!enableTransition) {
-            requestAnimationFrame(() => {
-                setEnableTransition(true);
-            });
+        if (currentIndex === skills.length) {
+            setTimeout(() => {
+                setEnableTransition(false);
+                setCurrentIndex(0);
+            }, 800); // match CSS transition time
+        } else {
+            setEnableTransition(true);
         }
-    }, [enableTransition]);
+    }, [currentIndex, skills.length]);
 
     return (
         <section id='skills' className="skill">
@@ -57,7 +93,6 @@ export function Skill() {
 
             <div className="reveal container">
                 <div
-                    onTransitionEnd={handleTransitionEnd}
                     className={`skill-slider ${enableTransition ? 'transition' : ''}`}
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
@@ -71,9 +106,9 @@ export function Skill() {
                                 alt={skill.name}
                             />
                             <div className="skill-text">
-                                <strong>{skill.name}</strong>
-                                <p>{skill.description}</p>
-                            </div>
+                                    <strong>{skill.name}</strong>
+                                    <p>{skill.description}</p>
+                                </div>
                         </div>
                     ))}
                 </div>
