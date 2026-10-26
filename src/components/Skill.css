@@ -62,11 +62,12 @@
 /* image */
 .skill-image {
     width: 150px;
-    height: 150px;
+    height: 95px;
     object-fit: contain;
     margin-bottom: 20px;
     transition: transform 0.3s ease;
     cursor: pointer;
+    
 }
 
 .skill-image:hover {
@@ -143,7 +144,8 @@
         height: 250px;
     }
     .skill-image{
-        margin-bottom: 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 }
 
